@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Agro Yard</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="agro_yard">Agro Yard</string>
+    <string name="email">Email</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign Up</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="image_background">Image Background</string>
+    <string name="app_logo">App Logo</string>
+    <string name="name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account_login">Already have an account? Log in</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="market_name">Market Name</string>
+    <string name="market_id">Market ID</string>
+    <string name="district">District</string>
+    <string name="taluka">Taluka</string>
+    <string name="state">State</string>
+    <string name="tagline"><![CDATA[Connecting Farmers & Buyers]]></string>
+    <string name="select_amount">Select Amount</string>
+    <string name="payment">Payment</string>
+    <string name="payment_history">Payment History</string>
+
+    <string-array name="user_types">
+        <item>Select User Type</item>
+        <item>Farmer</item>
+        <item>Member</item>
+    </string-array>
+
+    <string-array name="states">
+        <item>Select State</item>
+    </string-array>
+
+    <string-array name="districts">
+        <item>Select District</item>
+    </string-array>
+
+    <string name="version_info">Version: 1.0.0</string>
+    <string name="developer_info">Developed by Bhavesh Kulthe &amp; Team</string>
+    <string name="contact_info">Visit our website: https://github.com/Bhavesh486/AgroYard</string>
+    <string name="app_description">Agro-Yard is a cutting-edge agricultural trading platform designed to connect farmers, traders, and markets in a seamless and efficient manner. \n\nOur app offers a range of features to facilitate smooth transactions, including real-time updates on market prices, availability of goods, and agricultural trends. \n\nFarmers can easily find buyers for their produce, while traders and market representatives can access the freshest farm supplies. The platform prioritizes secure transactions to ensure both buyers and sellers are protected, and enables easy communication through in-app messaging and notifications. \n\nWhether you\'re a small-scale farmer or a large agricultural supplier, Agro-Yard ensures that you have all the tools needed to make informed decisions and manage your business efficiently.\n\nWith Agro-Yard, agricultural commerce has never been more accessible and transparent. \n\nJoin us today to be part of the future of farming and trading!</string>
+
+</resources>

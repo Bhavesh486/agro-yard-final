@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="farming_types">
+        <item>Organic</item>
+        <item>Natural</item>
+        <item>Conventional</item>
+        <item>Hydroponic</item>
+        <item>Permaculture</item>
+    </string-array>
+</resources> 

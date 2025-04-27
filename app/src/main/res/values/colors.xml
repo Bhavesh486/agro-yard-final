@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core Colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Primary Theme Colors -->
+    <color name="colorPrimary">#847358</color> <!-- Brown header color -->
+    <color name="colorPrimaryDark">#705F40</color> <!-- Darker brown for status bar -->
+    <color name="colorAccent">#4079E4</color> <!-- Blue accent color -->
+
+    <!-- Background & Card Colors -->
+    <color name="backgroundLight">#F5F5F5</color> <!-- Light Background for UI Clarity -->
+    <color name="backgroundDark">#121212</color> <!-- Dark Background for Night Mode -->
+    <color name="cardBackground">#FFFFFF</color> <!-- White Background for Cards -->
+    <color name="cardBackgroundDark">#1E1E1E</color> <!-- Dark Card Background -->
+
+    <!-- Text Colors -->
+    <color name="textPrimary">#333333</color> <!-- Dark Gray (For Readability) -->
+    <color name="textSecondary">#666666</color> <!-- Lighter Gray for Secondary Text -->
+    <color name="textHint">#CCCCCC</color> <!-- Hint Color for Input Fields -->
+    <color name="textLink">#0288D1</color> <!-- Blue for Clickable Links -->
+
+    <!-- Button & Input Field Colors -->
+    <color name="inputFieldBorder">#BDBDBD</color> <!-- Light Gray for Borders -->
+    <color name="inputFieldBackground">#F5F5F5</color> <!-- Light Gray Background for Input Fields -->
+    <color name="buttonText">#FFFFFF</color> <!-- White Text for Buttons -->
+    <color name="buttonDisabled">#B0BEC5</color> <!-- Disabled Button Color -->
+    <color name="buttonRipple">#66BB6A</color> <!-- Light Green Ripple Effect -->
+
+    <!-- Error & Success Colors -->
+    <color name="errorColor">#F44336</color> <!-- Red for Errors -->
+    <color name="successColor">#4CAF50</color> <!-- Green for Success Messages -->
+    <color name="warningColor">#FFC107</color> <!-- Orange for Warnings -->
+    <color name="infoColor">#29B6F6</color> <!-- Light Blue for Information Messages -->
+
+    <!-- Transparent Overlays -->
+    <color name="semiTransparentBlack">#80000000</color> <!-- Semi-Transparent Black -->
+    <color name="semiTransparentWhite">#80FFFFFF</color> <!-- Semi-Transparent White -->
+
+    <!-- Additional UI Colors -->
+    <color name="dividerColor">#E0E0E0</color> <!-- Light Gray for Dividers -->
+    <color name="shadowColor">#40000000</color> <!-- Light Shadow Effect -->
+    <color name="highlightColor">#FFEB3B</color> <!-- Bright Yellow Highlight -->
+
+    <!-- App-Specific Colors -->
+    <color name="appNameColor">#FFFFFF</color> <!-- White for App Name -->
+    <color name="signupTextColor">#2E7D32</color> <!-- Green for Signup -->
+    <color name="loginTextColor">#2E7D32</color> <!-- Green for Login -->
+    <color name="tabSelectedColor">#4CAF50</color> <!-- Selected Tab Color -->
+    <color name="tabUnselectedColor">#BDBDBD</color> <!-- Unselected Tab Color -->
+    
+    <!-- Main Theme Colors (from screenshot) -->
+    <color name="primary_dark">#705F40</color> <!-- Darker brown status bar -->
+    <color name="primary">#847358</color> <!-- Brown header background -->
+    <color name="primary_light">#E3EAFF</color> <!-- Light blue tint -->
+    
+    <!-- Accent Colors -->
+    <color name="orange">#FFA000</color> <!-- Orange accent -->
+    <color name="green">#4CAF50</color> <!-- Green accent -->
+    
+    <!-- Icon Background Colors -->
+    <color name="circle_bg">#33FFFFFF</color> <!-- Translucent white circle -->
+    <color name="circle_pl">#1A3F51B5</color> <!-- Light blue circle -->
+    <color name="circle_ol">#1AFFA000</color> <!-- Light orange circle -->
+    <color name="circle_gl">#1A4CAF50</color> <!-- Light green circle -->
+    <color name="circle_odl">#1AFF6F00</color> <!-- Darker orange circle -->
+    <color name="circle_gdl">#1A1B5E20</color> <!-- Darker green circle -->
+
+    <!-- Icon Background Colors (from screenshot) -->
+    <color name="circle_primary_light">#E8F5E9</color> <!-- Very light green -->
+    <color name="circle_orange_light">#FFF3E0</color> <!-- Very light orange -->
+    <color name="circle_green_light">#E8F5E9</color> <!-- Very light green -->
+    <color name="circle_orange_dark_light">#FFF8E1</color> <!-- Pale orange -->
+    <color name="circle_green_dark_light">#E8F5E9</color> <!-- Light green -->
+    <color name="circle_red_light">#FFEBEE</color> <!-- Very light red -->
+
+    <!-- Weather Card Colors (from screenshot) -->
+    <color name="weather_card_bg">#4079E4</color> <!-- Blue weather card -->
+    <color name="weather_text">#FFFFFF</color> <!-- White text on weather card -->
+    <color name="weather_text_secondary">#CCFFFFFF</color> <!-- Translucent white secondary text -->
+
+    <!-- Card Color -->
+    <color name="surface">#FFFFFF</color> <!-- White card background -->
+
+    <!-- Header Background -->
+    <color name="header_bg">#847358</color> <!-- Brown header background -->
+    
+    <!-- New Crop Colors -->
+    <color name="potato_color">#E1C699</color> <!-- Light brown for potatoes -->
+    <color name="mango_color">#FFB347</color> <!-- Orange for mangoes -->
+    <color name="corn_color">#F4E32A</color> <!-- Yellow for corn -->
+    <color name="carrot_color">#FF7F50</color> <!-- Orange for carrots -->
+    
+    <!-- New Fruit Colors -->
+    <color name="banana_color">#FFE135</color> <!-- Yellow for bananas -->
+    <color name="orange_color">#FFA500</color> <!-- Orange for oranges -->
+    <color name="grapes_color">#6F2DA8</color> <!-- Purple for grapes -->
+    <color name="watermelon_color">#FC6C85</color> <!-- Pink for watermelon -->
+    <color name="strawberry_color">#FF2500</color> <!-- Red for strawberries -->
+    <color name="pineapple_color">#FEE12B</color> <!-- Yellow for pineapple -->
+    <color name="cherry_color">#DE3163</color> <!-- Cherry red -->
+    <color name="kiwi_color">#8EE53F</color> <!-- Green for kiwi -->
+    <color name="papaya_color">#FFA07A</color> <!-- Light orange for papaya -->
+    <color name="guava_color">#AAF0D1</color> <!-- Light green for guava -->
+    
+    <!-- New Vegetable Colors -->
+    <color name="onions_color">#C3B091</color> <!-- Brown for onions -->
+    <color name="cucumber_color">#50C878</color> <!-- Green for cucumber -->
+    <color name="broccoli_color">#0B6623</color> <!-- Dark green for broccoli -->
+    <color name="eggplant_color">#614051</color> <!-- Purple for eggplant -->
+    <color name="bell_pepper_color">#FF4500</color> <!-- Red for bell pepper -->
+    <color name="spinach_color">#175732</color> <!-- Dark green for spinach -->
+    <color name="lettuce_color">#84BF04</color> <!-- Light green for lettuce -->
+    <color name="cauliflower_color">#F0F8FF</color> <!-- Off-white for cauliflower -->
+    <color name="peas_color">#7FFF00</color> <!-- Bright green for peas -->
+    <color name="garlic_color">#F2F3F4</color> <!-- Off-white for garlic -->
+    
+    <!-- New Grain Colors -->
+    <color name="barley_color">#D4B483</color> <!-- Tan for barley -->
+    <color name="oats_color">#CBAF87</color> <!-- Light brown for oats -->
+    <color name="millet_color">#E0C097</color> <!-- Golden for millet -->
+    <color name="quinoa_color">#C8A2C8</color> <!-- Light purple for quinoa -->
+    <color name="sorghum_color">#9B2D30</color> <!-- Reddish-brown for sorghum -->
+</resources>

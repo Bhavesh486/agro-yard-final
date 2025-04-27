@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SignupUser">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/image_background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/farmer_background"/>
+
+    <!-- Transparent Overlay for Readability -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"/> <!-- Semi-transparent black overlay -->
+
+    <!-- Centered Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_bg"
+        android:elevation="8dp"
+        android:layout_margin="45dp">
+
+        <!-- App Icon -->
+        <ImageView
+            android:id="@+id/appIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/app_logo"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_logo"
+            android:layout_marginBottom="12dp"
+            />
+
+        <!-- App Name -->
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/agro_yard"
+            android:textSize="32sp"
+            android:textColor="@color/appNameColor"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <!-- User Type Selection -->
+                <Spinner
+                    android:id="@+id/userTypeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_field_bg"
+                    android:padding="12dp"
+                    android:entries="@array/user_types"
+                    android:layout_marginBottom="12dp"
+                    />
+
+                <!-- Name Input -->
+                <EditText
+                    android:id="@+id/nameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:textColorHint="@color/textSecondary"
+                    android:textColor="@color/black"
+                    android:padding="12dp"
+                    android:background="@drawable/input_field_bg"/>
+
+                <!-- Email Input -->
+                <EditText
+                    android:id="@+id/emailInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:textColorHint="@color/textSecondary"
+                    android:textColor="@color/black"
+                    android:padding="12dp"
+                    android:background="@drawable/input_field_bg"
+                    android:layout_marginTop="12dp"/>
+
+                <!--Mobile Number Input-->
+                <EditText
+                    android:id="@+id/mobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/mobile_number"
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textSecondary"
+                    android:padding="12dp"
+                    android:background="@drawable/input_field_bg"
+                    android:layout_marginTop="12dp"/>
+
+                <!-- Password Input -->
+                <EditText
+                    android:id="@+id/passwordInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textSecondary"
+                    android:padding="12dp"
+                    android:background="@drawable/input_field_bg"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="12dp"/>
+
+                <!-- Confirm Password Input -->
+                <EditText
+                    android:id="@+id/confirmPasswordInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/confirm_password"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textSecondary"
+                    android:padding="12dp"
+                    android:background="@drawable/input_field_bg"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="12dp"/>
+
+                <!-- State -->
+                <Spinner
+                    android:id="@+id/stateSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_field_bg"
+                    android:padding="12dp"
+                    android:entries="@array/states"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    />
+
+                <!-- District -->
+                <Spinner
+                    android:id="@+id/districtSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_field_bg"
+                    android:padding="12dp"
+                    android:entries="@array/districts"
+                    android:layout_marginBottom="12dp"
+                    />
+
+                <!-- Address (Only for Members) -->
+                <EditText
+                    android:id="@+id/addressInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Address"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textSecondary"
+                    android:padding="12dp"
+                    android:background="@drawable/input_field_bg"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- Market Name (Only for Members) -->
+                <EditText
+                    android:id="@+id/marketName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/market_name"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textSecondary"
+                    android:padding="12dp"
+                    android:background="@drawable/input_field_bg"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone"/> <!-- Initially hidden -->
+
+                <!-- Market ID (Only for Members) -->
+                <EditText
+                    android:id="@+id/marketId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/market_id"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/textSecondary"
+                    android:padding="12dp"
+                    android:background="@drawable/input_field_bg"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone"/> <!-- Initially hidden -->
+
+                <!-- Signup Button -->
+                <Button
+                    android:id="@+id/signupButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/buttonText"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:layout_marginTop="16dp"
+                    android:padding="12dp"
+                    android:textStyle="bold"/>
+
+                <!-- Already Have an Account (Login) -->
+                <TextView
+                    android:id="@+id/loginText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/already_have_an_account_login"
+                    android:textColor="@color/loginTextColor"
+                    android:textSize="14sp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="18dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="60dp"
+    android:viewportWidth="1200"
+    android:viewportHeight="600">
+    <path
+        android:fillColor="#3F51B5"
+        android:pathData="M200,100h800v400h-800z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M350,200L350,400L450,400L450,230L550,400L650,400L650,200L550,200L550,370L450,200L350,200Z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M700,200L700,300L800,300L800,350L700,350L700,400L850,400L850,300L750,300L750,250L850,250L850,200L700,200Z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M900,200L900,400L950,400L950,200L900,200Z"/>
+</vector> 
