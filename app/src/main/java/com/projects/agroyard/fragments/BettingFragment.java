@@ -2635,7 +2635,8 @@ public class BettingFragment extends Fragment {
                         bidAmount,
                         memberId,
                         memberName,
-                        memberPhone
+                        memberPhone,
+                ""
         ).addOnSuccessListener(documentReference -> {
             Log.d(TAG, "Farmer receipt created successfully with ID: " + documentReference.getId());
             receiptCreated[0] = true;
@@ -2664,7 +2665,8 @@ public class BettingFragment extends Fragment {
             bidAmount,
             farmerId,
             farmerName,
-            farmerPhone
+            farmerPhone,
+                ""
         ).addOnSuccessListener(documentReference -> {
             Log.d(TAG, "Member receipt created successfully with ID: " + documentReference.getId());
             receiptCreated[0] = true;

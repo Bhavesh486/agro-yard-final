@@ -20,13 +20,19 @@ public class Receipt {
     private String timestamp;
     private String status; // "pending", "completed", "cancelled"
 
+    private String totalPrice;
+
+    public void setTotalPrice(String totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
     // Required empty constructor for Firestore
     public Receipt() {
     }
 
     public Receipt(String productId, String productName, int quantity, int pricePerKg,
-                  String farmerId, String farmerName, String farmerPhone,
-                  String memberId, String memberName, String memberPhone) {
+                   String farmerId, String farmerName, String farmerPhone,
+                   String memberId, String memberName, String memberPhone, String totalPrice) {
         this.productId = productId;
         this.productName = productName;
         this.quantity = quantity;
@@ -37,6 +43,7 @@ public class Receipt {
         this.memberId = memberId;
         this.memberName = memberName;
         this.memberPhone = memberPhone;
+        this.totalPrice = totalPrice;
         this.status = "completed"; // By default set to completed
     }
 
@@ -154,7 +161,7 @@ public class Receipt {
     
     // New method to get total price as a long to avoid any precision issues
     public long getTotalPriceLong() {
-        return (long) quantity * (long) pricePerKg;
+        return Long.parseLong(this.totalPrice);
     }
     
     // New method to get formatted total price as string with currency symbol

@@ -101,7 +101,7 @@ public class ReceiptService {
     // Create a receipt as a farmer (current user is farmer)
     public Task<DocumentReference> createReceiptAsFarmer(Context context, String productId, String productName, 
                                                         int quantity, int pricePerKg,
-                                                        String memberId, String memberName, String memberPhone) {
+                                                        String memberId, String memberName, String memberPhone, String totalprice) {
         // Initialize session manager if not already initialized
         if (sessionManager == null) {
             sessionManager = new SessionManager(context);
@@ -151,7 +151,8 @@ public class ReceiptService {
             farmerPhone,
             memberId,
             memberName,
-            memberPhone
+            memberPhone,
+                totalprice
         );
         
         return createReceipt(receipt);
@@ -160,7 +161,7 @@ public class ReceiptService {
     // Create a receipt as a member (current user is member)
     public Task<DocumentReference> createReceiptAsMember(Context context, String productId, String productName,
                                                          int quantity, int pricePerKg,
-                                                         String farmerId, String farmerName, String farmerPhone) {
+                                                         String farmerId, String farmerName, String farmerPhone, String totalPrice) {
         // Initialize session manager if not already initialized
         if (sessionManager == null) {
             sessionManager = new SessionManager(context);
@@ -210,7 +211,8 @@ public class ReceiptService {
             farmerPhone,
             memberId,
             memberName,
-            memberPhone
+            memberPhone,
+                totalPrice
         );
         
         return createReceipt(receipt);
@@ -448,6 +450,7 @@ public class ReceiptService {
                             receipt.setId(doc.getId());
                             receipt.setProductId(doc.getString("productId"));
                             receipt.setProductName(doc.getString("productName"));
+                            receipt.setTotalPrice(String.valueOf(doc.getLong("totalPrice")));
 
                             Long quantity = doc.getLong("quantity");
                             if (quantity != null) {
@@ -494,7 +497,7 @@ public class ReceiptService {
                             receipt.setId(doc.getId());
                             receipt.setProductId(doc.getString("productId"));
                             receipt.setProductName(doc.getString("productName"));
-
+                            receipt.setTotalPrice(String.valueOf(doc.getLong("totalPrice")));
                             Long quantity = doc.getLong("quantity");
                             if (quantity != null) {
                                 receipt.setQuantity(quantity.intValue());

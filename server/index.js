@@ -209,7 +209,6 @@ async function sendBidNotification(productId, status) {
 }
 
 function sendNotifications(deviceTokens, message) {
-console.log("tokrn", deviceTokens)
  const multicastMessage = {
    notification: {
      title: 'Bid Status Update',

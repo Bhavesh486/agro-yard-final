@@ -716,7 +716,8 @@ public class ReceiptsFragment extends Fragment {
                 pricePerKg,
                 "testMember" + System.currentTimeMillis(),
                 "Test Member",
-                "+91 8765432101" // Use a different test phone number
+                "+91 8765432101", // Use a different test phone number,
+                    "2356"
             )
             .addOnSuccessListener(documentReference -> {
                 Toast.makeText(requireContext(), 
@@ -746,7 +747,8 @@ public class ReceiptsFragment extends Fragment {
                 pricePerKg,
                 "testFarmer" + System.currentTimeMillis(),
                 "Test Farmer",
-                "+91 8765432102" // Use a different test phone number
+                "+91 8765432102", // Use a different test phone number
+                    "hdkd"
             )
             .addOnSuccessListener(documentReference -> {
                 Toast.makeText(requireContext(), 
