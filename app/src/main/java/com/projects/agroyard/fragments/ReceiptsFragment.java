@@ -541,7 +541,7 @@ public class ReceiptsFragment extends Fragment {
         // Format and set the date and time
         if (receipt.getTimestamp() != null) {
             java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("MMM dd, yyyy hh:mm a", Locale.getDefault());
-            String formattedDate = dateFormat.format(receipt.getTimestamp().toDate());
+            String formattedDate = receipt.getTimestamp();
             dateTimeView.setText(formattedDate);
         } else {
             dateTimeView.setText("Date not available");

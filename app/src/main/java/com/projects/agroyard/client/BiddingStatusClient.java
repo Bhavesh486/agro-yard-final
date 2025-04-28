@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BiddingStatusClient {
-private static final String BASE_URL = "http://192.168.180.130:3000/"; // Replace YOUR_SERVER_IP
+private static final String BASE_URL = "https://agro-yard-final.onrender.com/"; // Replace YOUR_SERVER_IP
 private static Retrofit retrofit = null;
 
 public static Retrofit getClient() {

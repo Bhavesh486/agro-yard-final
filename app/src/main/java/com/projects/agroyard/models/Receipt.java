@@ -17,8 +17,7 @@ public class Receipt {
     private String memberId;
     private String memberName;
     private String memberPhone;
-    @ServerTimestamp
-    private Timestamp timestamp;
+    private String timestamp;
     private String status; // "pending", "completed", "cancelled"
 
     // Required empty constructor for Firestore
@@ -130,11 +129,11 @@ public class Receipt {
         this.memberPhone = memberPhone;
     }
 
-    public Timestamp getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 

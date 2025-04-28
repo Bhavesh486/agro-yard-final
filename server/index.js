@@ -3,6 +3,9 @@ import admin from 'firebase-admin';
 import cors from 'cors';
 import { WebSocketServer } from 'ws';
 import dotenv from 'dotenv';
+import { v4 as uuidv4 } from 'uuid';
+import moment from 'moment-timezone';
+
 
 dotenv.config();
 
@@ -22,6 +25,7 @@ admin.initializeApp({
 
 // Firestore reference
 const db = admin.firestore();
+let prodId = "";
 
 // Create HTTP server using Express
 const server = app.listen(process.env.PORT || 3000, () => {
@@ -232,3 +236,106 @@ console.log("tokrn", deviceTokens)
         console.log('Error sending message:', error);
       });
 }
+// for unique receipt ids
+
+app.post('/saveReceipt', async (req, res) => {
+  try {
+    const { productId } = req.body;
+
+    if(prodId === productId) {
+    return res.status(200).json({ message: 'Receipts created successfully.' });
+    }
+    prodId = productId;
+
+    if (!productId) {
+      return res.status(400).json({ error: 'productId is required' });
+    }
+
+    // Fetch product data
+    const productRef = admin.firestore().collection('products').doc(productId);
+    const productSnapshot = await productRef.get();
+    if (!productSnapshot.exists) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+    const productData = productSnapshot.data();
+
+    if (!productData.is_sold) {
+      return res.status(400).json({ error: 'Product is not marked as sold yet.' });
+    }
+
+    // Fetch farmer data
+    const farmerSnapshot = await admin.firestore().collection('users').doc(productData.farmerId).get();
+    if (!farmerSnapshot.exists) {
+      return res.status(404).json({ error: 'Farmer not found' });
+    }
+    const farmerData = farmerSnapshot.data();
+
+    // Fetch member (buyer) data by matching name
+    let memberData = null;
+    const usersSnapshot = await admin.firestore().collection('users').where('name', '==', productData.sold_to).get();
+    if (!usersSnapshot.empty) {
+      memberData = usersSnapshot.docs[0].data();
+    }
+
+    const realtimeDb = admin.database();
+    const timestampMillis = Date.now();
+
+// Format the timestamp properly
+const timestamp = moment(timestampMillis)
+  .tz('Asia/Kolkata') // for UTC+5:30
+  .format('DD MMMM YYYY [at] hh:mm:ss A [UTC+5:30]');    const totalAmount = productData.sold_amount || (productData.price * productData.quantity);
+
+    // Farmer Receipt
+    const receiptsCollection = admin.firestore().collection('receipts');
+
+    const farmerReceiptId = uuidv4();
+   await receiptsCollection.doc(farmerReceiptId).set({
+      productId: productId,
+      productName: productData.product_name,
+      quantity: productData.quantity,
+      pricePerKg: productData.price,
+      totalPrice: totalAmount,
+      totalPriceLong: totalAmount,
+      formattedTotalPrice: `₹${totalAmount}`,
+      farmerId: productData.farmerId,
+      farmerName: farmerData.name || '',
+      farmerPhone: farmerData.mobile || farmerData.phone || '',
+      memberName: memberData ? memberData.name : productData.sold_to,
+      memberPhone: memberData ? memberData.mobile : '',
+      timestamp: timestamp,
+      status: 'completed',
+    });
+
+    // Member Receipt (only if member data exists)
+    if (memberData) {
+      const memberReceiptId = uuidv4();
+      await receiptsCollection.doc(memberReceiptId).set({
+        productId: productId,
+        productName: productData.product_name,
+        quantity: productData.quantity,
+        pricePerKg: productData.price,
+        totalPrice: totalAmount,
+        formattedTotalPrice: `₹${totalAmount}`,
+        totalPriceLong: totalAmount,
+        farmerName: farmerData.name || '',
+        farmerPhone: farmerData.mobile || farmerData.phone || '',
+        memberId: usersSnapshot.docs[0].id,
+        memberName: memberData.name,
+        memberPhone: memberData.mobile,
+        timestamp: timestamp,
+        status: 'completed',
+      });
+    }
+
+    // Mark product as receipt_created: true
+    await productRef.update({ receipt_created: true });
+
+    console.log(`Receipts created successfully for product ${productId}`);
+    return res.status(200).json({ message: 'Receipts created successfully.' });
+
+  } catch (error) {
+    console.error('Error saving receipts:', error.message);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+

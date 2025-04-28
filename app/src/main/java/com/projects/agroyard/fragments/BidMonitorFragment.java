@@ -70,7 +70,7 @@ public class BidMonitorFragment extends Fragment {
         // call your private method here
         webSocketManager = new WebSocketManager(
                 requireContext(),
-                "ws://192.168.180.130:3000/",
+                "ws://agro-yard-final.onrender.com/",
                 this::loadBidData
         );
         webSocketManager.start();

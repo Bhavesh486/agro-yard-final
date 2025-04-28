@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.projects.agroyard.adapters.BidProductAdapter;
+import com.projects.agroyard.client.ApiCaller;
 import com.projects.agroyard.models.BidModel;
 import com.projects.agroyard.models.BidProductModel;
 import com.projects.agroyard.models.Product;
@@ -190,6 +191,7 @@ public class RealTimeUtils {
                                     @Override
                                     public void onSuccess() {
                                         onBidCompletedListener.onBidCompleted(true, "Bid Successfully Completed");
+                                        ApiCaller.generateReciept(productId);
                                     }
 
                                     @Override

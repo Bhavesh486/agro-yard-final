@@ -444,7 +444,34 @@ public class ReceiptService {
                         // Process farmer receipts
                         QuerySnapshot farmerReceipts = (QuerySnapshot) task.getResult().get(0);
                         for (com.google.firebase.firestore.DocumentSnapshot doc : farmerReceipts) {
-                            Receipt receipt = doc.toObject(Receipt.class);
+                            Receipt receipt = new Receipt();
+                            receipt.setId(doc.getId());
+                            receipt.setProductId(doc.getString("productId"));
+                            receipt.setProductName(doc.getString("productName"));
+
+                            Long quantity = doc.getLong("quantity");
+                            if (quantity != null) {
+                                receipt.setQuantity(quantity.intValue());
+                            }
+
+                            Long pricePerKg = doc.getLong("pricePerKg");
+                            if (pricePerKg != null) {
+                                receipt.setPricePerKg(pricePerKg.intValue());
+                            }
+
+                            receipt.setFarmerId(doc.getString("farmerId"));
+                            receipt.setFarmerName(doc.getString("farmerName"));
+                            receipt.setFarmerPhone(doc.getString("farmerPhone"));
+
+                            receipt.setMemberId(doc.getString("memberId"));
+                            receipt.setMemberName(doc.getString("memberName"));
+                            receipt.setMemberPhone(doc.getString("memberPhone"));
+
+                            receipt.setStatus(doc.getString("status"));
+
+                            // Handle timestamp
+                            String timestamp = doc.getString("timestamp");
+                            receipt.setTimestamp(timestamp);
                             if (receipt != null) {
                                 String receiptId = receipt.getId();
                                 // Only add if not already in the list
@@ -463,7 +490,35 @@ public class ReceiptService {
                         // Process member receipts
                         QuerySnapshot memberReceipts = (QuerySnapshot) task.getResult().get(1);
                         for (com.google.firebase.firestore.DocumentSnapshot doc : memberReceipts) {
-                            Receipt receipt = doc.toObject(Receipt.class);
+                            Receipt receipt = new Receipt();
+                            receipt.setId(doc.getId());
+                            receipt.setProductId(doc.getString("productId"));
+                            receipt.setProductName(doc.getString("productName"));
+
+                            Long quantity = doc.getLong("quantity");
+                            if (quantity != null) {
+                                receipt.setQuantity(quantity.intValue());
+                            }
+
+                            Long pricePerKg = doc.getLong("pricePerKg");
+                            if (pricePerKg != null) {
+                                receipt.setPricePerKg(pricePerKg.intValue());
+                            }
+
+                            receipt.setFarmerId(doc.getString("farmerId"));
+                            receipt.setFarmerName(doc.getString("farmerName"));
+                            receipt.setFarmerPhone(doc.getString("farmerPhone"));
+
+                            receipt.setMemberId(doc.getString("memberId"));
+                            receipt.setMemberName(doc.getString("memberName"));
+                            receipt.setMemberPhone(doc.getString("memberPhone"));
+
+                            receipt.setStatus(doc.getString("status"));
+
+                            // Handle timestamp
+                            String timestamp = doc.getString("timestamp");
+                            receipt.setTimestamp(timestamp);
+
                             if (receipt != null) {
                                 String receiptId = receipt.getId();
                                 // Only add if not already in the list
